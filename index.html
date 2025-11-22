@@ -2,6 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
+    <!-- Meta viewport dipertahankan dan penting untuk responsivitas -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jadwal Acara - Workshop PGRI Pandeglang 2025</title>
     <!-- Muat Tailwind CSS -->
@@ -16,55 +17,64 @@
         .gradient-header {
             background-image: linear-gradient(135deg, #10b981 0%, #059669 100%); /* Emerald/Green gradient */
         }
-        /* Style untuk membuat item jadwal lebih compact */
+        /* Style untuk membuat item jadwal lebih compact dan responsif */
         .schedule-item {
-            padding-top: 0.5rem; /* p-2 */
-            padding-bottom: 0.5rem; /* p-2 */
+            padding-top: 0.75rem; /* p-3 */
+            padding-bottom: 0.75rem; /* p-3 */
         }
         .schedule-list > li:not(.highlight) {
-            margin-bottom: 0.5rem; /* Jarak vertikal antar item dikurangi */
+            margin-bottom: 0.5rem; 
         }
         .time-box {
-            font-size: 1.125rem; /* text-lg */
-            line-height: 1.25rem;
+            /* Di mobile, ukuran font lebih kecil dan w-1/4, di atas sm: w-24 dan text-lg */
+            font-size: 1rem; /* text-base */
+            line-height: 1.5rem;
+        }
+        @media (min-width: 640px) { /* sm */
+            .time-box {
+                font-size: 1.125rem; /* text-lg */
+            }
         }
     </style>
 </head>
+<!-- Menggunakan p-4 untuk mobile dan sm:p-8 untuk tablet/desktop -->
 <body class="antialiased min-h-screen flex items-start justify-center p-4 sm:p-8">
 
     <div class="w-full max-w-4xl bg-white shadow-2xl rounded-xl overflow-hidden">
 
         <!-- Header dan Judul Utama -->
         <header class="gradient-header p-6 sm:p-8 text-white rounded-t-xl">
-            <!-- Container untuk Logos dan Text -->
-            <div class="flex items-center justify-between">
+            
+            <!-- Container untuk Logos dan Text: Menggunakan flex-col di mobile, sm:flex-row untuk tablet ke atas -->
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between">
                 
                 <!-- Logo 1 (Official PGRI) dan Blok Judul -->
-                <div class="flex items-center space-x-3">
+                <div class="flex items-start space-x-3 mb-4 sm:mb-0">
                     <!-- Logo PGRI Official -->
                     <img src="https://raw.githubusercontent.com/edibrata/image/main/Logo%20PGRI%20Official.png" 
                          alt="Logo PGRI Official" 
-                         class="h-12 w-auto bg-white p-1 rounded-md shadow-md"
+                         class="h-10 w-auto bg-white p-1 rounded-md shadow-md sm:h-12"
                          onerror="this.onerror=null;this.src='https://placehold.co/48x48/ffffff/059669?text=PGRI'">
                     
                     <div>
+                        <!-- Ukuran font responsif -->
                         <h1 class="text-xl sm:text-2xl font-bold tracking-tight">JADWAL ACARA</h1>
                         <p class="text-sm sm:text-lg font-light mt-0.5">Workshop Pembelajaran Mendalam Mata Pelajaran Matematika</p>
                     </div>
                 </div>
                 
-                <!-- Logos 2 & 3 (HUT & HGN) di sebelah kanan -->
-                <div class="flex items-center space-x-3 hidden sm:flex flex-shrink-0">
+                <!-- Logos 2 & 3 (HUT & HGN) di sebelah kanan - Ditampilkan hanya di tablet ke atas -->
+                <div class="hidden sm:flex items-center space-x-3 flex-shrink-0">
                     <!-- Logo HUT PGRI -->
                     <img src="https://raw.githubusercontent.com/edibrata/image/main/Logo%20HUT%20Ke-80%20PGRI_20250911_080956_0000.png" 
                          alt="Logo HUT PGRI Ke-80" 
-                         class="h-12 w-auto p-0.5 bg-white/20 rounded-md"
+                         class="h-10 w-auto p-0.5 bg-white/20 rounded-md sm:h-12"
                          onerror="this.onerror=null;this.src='https://placehold.co/48x48/ffffff/059669?text=HUT'">
                     
                     <!-- Logo Hari Guru Nasional -->
                     <img src="https://raw.githubusercontent.com/edibrata/image/main/Logo%20HGN%202025.png" 
                          alt="Logo Hari Guru Nasional 2025" 
-                         class="h-12 w-auto p-0.5 bg-white/20 rounded-md"
+                         class="h-10 w-auto p-0.5 bg-white/20 rounded-md sm:h-12"
                          onerror="this.onerror=null;this.src='https://placehold.co/48x48/ffffff/059669?text=HGN'">
                 </div>
 
@@ -77,79 +87,81 @@
         <div class="p-4 sm:p-8">
             <h2 class="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Rangkaian Kegiatan</h2>
 
-            <!-- Daftar Acara (Menggunakan space-y-2 dan padding p-2 untuk compact) -->
+            <!-- Daftar Acara -->
             <ul class="space-y-2 schedule-list">
-                <!-- Baris Acara (Item Jadwal) -->
-                <li class="flex items-start space-x-4 schedule-item p-2 bg-gray-50 rounded-lg transition duration-200 hover:bg-gray-100">
-                    <div class="flex-shrink-0 w-24 text-center font-bold time-box text-emerald-600">
+                <!-- Struktur Item Jadwal yang Responsif -->
+                <li class="flex flex-col sm:flex-row items-start sm:items-center space-y-1 sm:space-y-0 sm:space-x-4 schedule-item p-3 bg-gray-50 rounded-lg transition duration-200 hover:bg-gray-100">
+                    <!-- Penyesuaian lebar waktu: w-full sm:w-24 -->
+                    <div class="flex-shrink-0 w-full sm:w-24 text-left sm:text-center font-bold time-box text-emerald-600 border-b sm:border-b-0 pb-1 sm:pb-0">
                         07.30
-                        <div class="text-xs font-medium text-gray-500">s/d 08.15</div>
+                        <div class="text-xs font-medium text-gray-500 inline-block sm:block ml-2 sm:ml-0">s/d 08.15</div>
                     </div>
-                    <div class="flex-1">
+                    <div class="flex-1 pt-1 sm:pt-0">
                         <p class="text-gray-700 font-medium">Pengaturan Peserta Masuk Aula</p>
                     </div>
                 </li>
 
-                <li class="flex items-start space-x-4 schedule-item p-2 bg-white rounded-lg border-b border-gray-100">
-                    <div class="flex-shrink-0 w-24 text-center font-bold time-box text-emerald-600">
+                <li class="flex flex-col sm:flex-row items-start sm:items-center space-y-1 sm:space-y-0 sm:space-x-4 schedule-item p-3 bg-white rounded-lg border-b border-gray-100">
+                    <div class="flex-shrink-0 w-full sm:w-24 text-left sm:text-center font-bold time-box text-emerald-600 border-b sm:border-b-0 pb-1 sm:pb-0">
                         08.15
-                        <div class="text-xs font-medium text-gray-500">s/d 08.30</div>
+                        <div class="text-xs font-medium text-gray-500 inline-block sm:block ml-2 sm:ml-0">s/d 08.30</div>
                     </div>
-                    <div class="flex-1">
+                    <div class="flex-1 pt-1 sm:pt-0">
                         <p class="text-gray-700 font-medium">Arahan Kebijakan Ketua PGRI</p>
                     </div>
                 </li>
 
-                <li class="flex items-start space-x-4 schedule-item p-2 bg-gray-50 rounded-lg transition duration-200 hover:bg-gray-100">
-                    <div class="flex-shrink-0 w-24 text-center font-bold time-box text-emerald-600">
+                <li class="flex flex-col sm:flex-row items-start sm:items-center space-y-1 sm:space-y-0 sm:space-x-4 schedule-item p-3 bg-gray-50 rounded-lg transition duration-200 hover:bg-gray-100">
+                    <div class="flex-shrink-0 w-full sm:w-24 text-left sm:text-center font-bold time-box text-emerald-600 border-b sm:border-b-0 pb-1 sm:pb-0">
                         08.30
-                        <div class="text-xs font-medium text-gray-500">s/d 11.30</div>
+                        <div class="text-xs font-medium text-gray-500 inline-block sm:block ml-2 sm:ml-0">s/d 11.30</div>
                     </div>
-                    <div class="flex-1">
+                    <div class="flex-1 pt-1 sm:pt-0">
                         <p class="text-gray-700 font-medium">Materi Narasumber 1</p>
                     </div>
                 </li>
 
-                <li class="flex items-start space-x-4 schedule-item p-2 bg-white rounded-lg border-b border-gray-100">
-                    <div class="flex-shrink-0 w-24 text-center font-bold time-box text-emerald-600">
+                <li class="flex flex-col sm:flex-row items-start sm:items-center space-y-1 sm:space-y-0 sm:space-x-4 schedule-item p-3 bg-white rounded-lg border-b border-gray-100">
+                    <div class="flex-shrink-0 w-full sm:w-24 text-left sm:text-center font-bold time-box text-emerald-600 border-b sm:border-b-0 pb-1 sm:pb-0">
                         11.30
-                        <div class="text-xs font-medium text-gray-500">s/d 13.00</div>
+                        <div class="text-xs font-medium text-gray-500 inline-block sm:block ml-2 sm:ml-0">s/d 13.00</div>
                     </div>
-                    <div class="flex-1">
+                    <div class="flex-1 pt-1 sm:pt-0">
                         <p class="text-gray-700 font-medium">Materi Narasumber 2 Sesi 1</p>
                     </div>
                 </li>
 
-                <!-- Break -->
-                <li class="flex items-start space-x-4 schedule-item p-2 bg-yellow-100 rounded-lg border-2 border-yellow-300 highlight">
-                    <div class="flex-shrink-0 w-24 text-center font-bold time-box text-yellow-700">
+                <!-- Break - Highlight -->
+                <li class="flex flex-col sm:flex-row items-start sm:items-center space-y-1 sm:space-y-0 sm:space-x-4 schedule-item p-3 bg-yellow-100 rounded-lg border-2 border-yellow-300 highlight">
+                    <div class="flex-shrink-0 w-full sm:w-24 text-left sm:text-center font-bold time-box text-yellow-700 border-b sm:border-b-0 pb-1 sm:pb-0">
                         13.00
-                        <div class="text-xs font-medium text-yellow-700">s/d 13.45</div>
+                        <div class="text-xs font-medium text-yellow-700 inline-block sm:block ml-2 sm:ml-0">s/d 13.45</div>
                     </div>
-                    <div class="flex-1">
+                    <div class="flex-1 pt-1 sm:pt-0">
                         <p class="text-yellow-800 font-semibold">Istirahat</p>
                     </div>
                 </li>
 
-                <li class="flex items-start space-x-4 schedule-item p-2 bg-white rounded-lg border-b border-gray-100">
-                    <div class="flex-shrink-0 w-24 text-center font-bold time-box text-emerald-600">
+                <li class="flex flex-col sm:flex-row items-start sm:items-center space-y-1 sm:space-y-0 sm:space-x-4 schedule-item p-3 bg-white rounded-lg border-b border-gray-100">
+                    <div class="flex-shrink-0 w-full sm:w-24 text-left sm:text-center font-bold time-box text-emerald-600 border-b sm:border-b-0 pb-1 sm:pb-0">
                         13.45
-                        <div class="text-xs font-medium text-gray-500">s/d 14.00</div>
+                        <div class="text-xs font-medium text-gray-500 inline-block sm:block ml-2 sm:ml-0">s/d 14.00</div>
                     </div>
-                    <div class="flex-1">
+                    <div class="flex-1 pt-1 sm:pt-0">
                         <p class="text-gray-700 font-medium">Ice Breaking</p>
                     </div>
                 </li>
 
-                <!-- Acara Pembukaan -->
-                <li class="schedule-item p-2 bg-blue-50 rounded-lg border-2 border-blue-200 highlight">
-                    <div class="flex items-start space-x-4">
-                        <div class="flex-shrink-0 w-24 text-center font-bold time-box text-blue-700">
+                <!-- Acara Pembukaan - Multi-line content -->
+                <li class="schedule-item p-3 bg-blue-50 rounded-lg border-2 border-blue-200 highlight">
+                    <div class="flex flex-col sm:flex-row items-start space-y-1 sm:space-y-0 sm:space-x-4">
+                        <div class="flex-shrink-0 w-full sm:w-24 text-left sm:text-center font-bold time-box text-blue-700 border-b sm:border-b-0 pb-1 sm:pb-0">
                             14.00
-                            <div class="text-xs font-medium text-blue-600">s/d 14.30</div>
+                            <div class="text-xs font-medium text-blue-600 inline-block sm:block ml-2 sm:ml-0">s/d 14.30</div>
                         </div>
-                        <div class="flex-1">
+                        <div class="flex-1 pt-1 sm:pt-0">
                             <p class="text-blue-800 font-semibold mb-1">Acara Pembukaan:</p>
+                            <!-- List di mobile akan tetap di bawah blok waktu -->
                             <ol class="list-decimal list-inside text-xs text-blue-700 space-y-0 ml-2">
                                 <li>Do'a</li>
                                 <li>Indonesia Raya</li>
@@ -161,52 +173,52 @@
                     </div>
                 </li>
 
-                <li class="flex items-start space-x-4 schedule-item p-2 bg-gray-50 rounded-lg transition duration-200 hover:bg-gray-100">
-                    <div class="flex-shrink-0 w-24 text-center font-bold time-box text-emerald-600">
+                <li class="flex flex-col sm:flex-row items-start sm:items-center space-y-1 sm:space-y-0 sm:space-x-4 schedule-item p-3 bg-gray-50 rounded-lg transition duration-200 hover:bg-gray-100">
+                    <div class="flex-shrink-0 w-full sm:w-24 text-left sm:text-center font-bold time-box text-emerald-600 border-b sm:border-b-0 pb-1 sm:pb-0">
                         14.30
-                        <div class="text-xs font-medium text-gray-500">s/d 14.45</div>
+                        <div class="text-xs font-medium text-gray-500 inline-block sm:block ml-2 sm:ml-0">s/d 14.45</div>
                     </div>
-                    <div class="flex-1">
+                    <div class="flex-1 pt-1 sm:pt-0">
                         <p class="text-gray-700 font-medium">Foto Bersama</p>
                     </div>
                 </li>
 
                 <!-- Perubahan teks pada item ini: Plt. Kadisdikpora -> Kadisdikpora -->
-                <li class="flex items-start space-x-4 schedule-item p-2 bg-white rounded-lg border-b border-gray-100">
-                    <div class="flex-shrink-0 w-24 text-center font-bold time-box text-emerald-600">
+                <li class="flex flex-col sm:flex-row items-start sm:items-center space-y-1 sm:space-y-0 sm:space-x-4 schedule-item p-3 bg-white rounded-lg border-b border-gray-100">
+                    <div class="flex-shrink-0 w-full sm:w-24 text-left sm:text-center font-bold time-box text-emerald-600 border-b sm:border-b-0 pb-1 sm:pb-0">
                         14.45
-                        <div class="text-xs font-medium text-gray-500">s/d 15.00</div>
+                        <div class="text-xs font-medium text-gray-500 inline-block sm:block ml-2 sm:ml-0">s/d 15.00</div>
                     </div>
-                    <div class="flex-1">
+                    <div class="flex-1 pt-1 sm:pt-0">
                         <p class="text-gray-700 font-medium">Arahan Kebijakan Kadisdikpora</p>
                     </div>
                 </li>
 
-                <li class="flex items-start space-x-4 schedule-item p-2 bg-gray-50 rounded-lg transition duration-200 hover:bg-gray-100">
-                    <div class="flex-shrink-0 w-24 text-center font-bold time-box text-emerald-600">
+                <li class="flex flex-col sm:flex-row items-start sm:items-center space-y-1 sm:space-y-0 sm:space-x-4 schedule-item p-3 bg-gray-50 rounded-lg transition duration-200 hover:bg-gray-100">
+                    <div class="flex-shrink-0 w-full sm:w-24 text-left sm:text-center font-bold time-box text-emerald-600 border-b sm:border-b-0 pb-1 sm:pb-0">
                         15.00
-                        <div class="text-xs font-medium text-gray-500">s/d 16.30</div>
+                        <div class="text-xs font-medium text-gray-500 inline-block sm:block ml-2 sm:ml-0">s/d 16.30</div>
                     </div>
-                    <div class="flex-1">
+                    <div class="flex-1 pt-1 sm:pt-0">
                         <p class="text-gray-700 font-medium">Materi Narasumber 2 Sesi 2</p>
                     </div>
                 </li>
 
-                <li class="flex items-start space-x-4 schedule-item p-2 bg-white rounded-lg border-b border-gray-100">
-                    <div class="flex-shrink-0 w-24 text-center font-bold time-box text-emerald-600">
+                <li class="flex flex-col sm:flex-row items-start sm:items-center space-y-1 sm:space-y-0 sm:space-x-4 schedule-item p-3 bg-white rounded-lg border-b border-gray-100">
+                    <div class="flex-shrink-0 w-full sm:w-24 text-left sm:text-center font-bold time-box text-emerald-600 border-b sm:border-b-0 pb-1 sm:pb-0">
                         16.30
-                        <div class="text-xs font-medium text-gray-500">s/d 17.00</div>
+                        <div class="text-xs font-medium text-gray-500 inline-block sm:block ml-2 sm:ml-0">s/d 17.00</div>
                     </div>
-                    <div class="flex-1">
+                    <div class="flex-1 pt-1 sm:pt-0">
                         <p class="text-gray-700 font-medium">RTL (Rencana Tindak Lanjut) / Faslok</p>
                     </div>
                 </li>
                 
-                <li class="flex items-start space-x-4 schedule-item p-2 bg-red-50 rounded-lg border-2 border-red-200 highlight">
-                    <div class="flex-shrink-0 w-24 text-center font-bold time-box text-red-700">
+                <li class="flex flex-col sm:flex-row items-start sm:items-center space-y-1 sm:space-y-0 sm:space-x-4 schedule-item p-3 bg-red-50 rounded-lg border-2 border-red-200 highlight">
+                    <div class="flex-shrink-0 w-full sm:w-24 text-left sm:text-center font-bold time-box text-red-700 border-b sm:border-b-0 pb-1 sm:pb-0">
                         17.00
                     </div>
-                    <div class="flex-1">
+                    <div class="flex-1 pt-1 sm:pt-0">
                         <p class="text-red-800 font-semibold">Pengaturan Peserta Keluar Aula</p>
                     </div>
                 </li>
