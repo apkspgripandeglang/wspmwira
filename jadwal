@@ -1,1 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadwal Acara - Workshop PGRI Pandeglang 2025</title>
+    <!-- Muat Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Konfigurasi Font Inter dan tema warna -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fc; /* Light background for professionalism */
+        }
+        .gradient-header {
+            background-image: linear-gradient(135deg, #10b981 0%, #059669 100%); /* Emerald/Green gradient */
+        }
+        /* Style untuk membuat item jadwal lebih compact */
+        .schedule-item {
+            padding-top: 0.5rem; /* p-2 */
+            padding-bottom: 0.5rem; /* p-2 */
+        }
+        .schedule-list > li:not(.highlight) {
+            margin-bottom: 0.5rem; /* Jarak vertikal antar item dikurangi */
+        }
+        .time-box {
+            font-size: 1.125rem; /* text-lg */
+            line-height: 1.25rem;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex items-start justify-center p-4 sm:p-8">
 
+    <div class="w-full max-w-4xl bg-white shadow-2xl rounded-xl overflow-hidden">
+
+        <!-- Header dan Judul Utama -->
+        <header class="gradient-header p-6 sm:p-8 text-white rounded-t-xl">
+            <!-- Container untuk Logos dan Text -->
+            <div class="flex items-center justify-between">
+                
+                <!-- Logo 1 (Official PGRI) dan Blok Judul -->
+                <div class="flex items-center space-x-3">
+                    <!-- Logo PGRI Official -->
+                    <img src="https://raw.githubusercontent.com/edibrata/image/main/Logo%20PGRI%20Official.png" 
+                         alt="Logo PGRI Official" 
+                         class="h-12 w-auto bg-white p-1 rounded-md shadow-md"
+                         onerror="this.onerror=null;this.src='https://placehold.co/48x48/ffffff/059669?text=PGRI'">
+                    
+                    <div>
+                        <h1 class="text-xl sm:text-2xl font-bold tracking-tight">JADWAL ACARA</h1>
+                        <p class="text-sm sm:text-lg font-light mt-0.5">Workshop Pembelajaran Mendalam Mata Pelajaran Matematika</p>
+                    </div>
+                </div>
+                
+                <!-- Logos 2 & 3 (HUT & HGN) di sebelah kanan -->
+                <div class="flex items-center space-x-3 hidden sm:flex flex-shrink-0">
+                    <!-- Logo HUT PGRI -->
+                    <img src="https://raw.githubusercontent.com/edibrata/image/main/Logo%20HUT%20Ke-80%20PGRI_20250911_080956_0000.png" 
+                         alt="Logo HUT PGRI Ke-80" 
+                         class="h-12 w-auto p-0.5 bg-white/20 rounded-md"
+                         onerror="this.onerror=null;this.src='https://placehold.co/48x48/ffffff/059669?text=HUT'">
+                    
+                    <!-- Logo Hari Guru Nasional -->
+                    <img src="https://raw.githubusercontent.com/edibrata/image/main/Logo%20HGN%202025.png" 
+                         alt="Logo Hari Guru Nasional 2025" 
+                         class="h-12 w-auto p-0.5 bg-white/20 rounded-md"
+                         onerror="this.onerror=null;this.src='https://placehold.co/48x48/ffffff/059669?text=HGN'">
+                </div>
+
+            </div>
+            
+            <p class="text-xs sm:text-sm mt-3 opacity-90 border-t border-white/30 pt-3">PGRI Kabupaten Pandeglang Tahun 2025</p>
+        </header>
+
+        <!-- Bagian Jadwal Acara -->
+        <div class="p-4 sm:p-8">
+            <h2 class="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Rangkaian Kegiatan</h2>
+
+            <!-- Daftar Acara (Menggunakan space-y-2 dan padding p-2 untuk compact) -->
+            <ul class="space-y-2 schedule-list">
+                <!-- Baris Acara (Item Jadwal) -->
+                <li class="flex items-start space-x-4 schedule-item p-2 bg-gray-50 rounded-lg transition duration-200 hover:bg-gray-100">
+                    <div class="flex-shrink-0 w-24 text-center font-bold time-box text-emerald-600">
+                        07.30
+                        <div class="text-xs font-medium text-gray-500">s/d 08.15</div>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-gray-700 font-medium">Pengaturan Peserta Masuk Aula</p>
+                    </div>
+                </li>
+
+                <li class="flex items-start space-x-4 schedule-item p-2 bg-white rounded-lg border-b border-gray-100">
+                    <div class="flex-shrink-0 w-24 text-center font-bold time-box text-emerald-600">
+                        08.15
+                        <div class="text-xs font-medium text-gray-500">s/d 08.30</div>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-gray-700 font-medium">Arahan Kebijakan Ketua PGRI</p>
+                    </div>
+                </li>
+
+                <li class="flex items-start space-x-4 schedule-item p-2 bg-gray-50 rounded-lg transition duration-200 hover:bg-gray-100">
+                    <div class="flex-shrink-0 w-24 text-center font-bold time-box text-emerald-600">
+                        08.30
+                        <div class="text-xs font-medium text-gray-500">s/d 11.30</div>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-gray-700 font-medium">Materi Narasumber 1</p>
+                    </div>
+                </li>
+
+                <li class="flex items-start space-x-4 schedule-item p-2 bg-white rounded-lg border-b border-gray-100">
+                    <div class="flex-shrink-0 w-24 text-center font-bold time-box text-emerald-600">
+                        11.30
+                        <div class="text-xs font-medium text-gray-500">s/d 13.00</div>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-gray-700 font-medium">Materi Narasumber 2 Sesi 1</p>
+                    </div>
+                </li>
+
+                <!-- Break -->
+                <li class="flex items-start space-x-4 schedule-item p-2 bg-yellow-100 rounded-lg border-2 border-yellow-300 highlight">
+                    <div class="flex-shrink-0 w-24 text-center font-bold time-box text-yellow-700">
+                        13.00
+                        <div class="text-xs font-medium text-yellow-700">s/d 13.45</div>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-yellow-800 font-semibold">Istirahat</p>
+                    </div>
+                </li>
+
+                <li class="flex items-start space-x-4 schedule-item p-2 bg-white rounded-lg border-b border-gray-100">
+                    <div class="flex-shrink-0 w-24 text-center font-bold time-box text-emerald-600">
+                        13.45
+                        <div class="text-xs font-medium text-gray-500">s/d 14.00</div>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-gray-700 font-medium">Ice Breaking</p>
+                    </div>
+                </li>
+
+                <!-- Acara Pembukaan -->
+                <li class="schedule-item p-2 bg-blue-50 rounded-lg border-2 border-blue-200 highlight">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-24 text-center font-bold time-box text-blue-700">
+                            14.00
+                            <div class="text-xs font-medium text-blue-600">s/d 14.30</div>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-blue-800 font-semibold mb-1">Acara Pembukaan meliputi:</p>
+                            <ol class="list-decimal list-inside text-xs text-blue-700 space-y-0 ml-2">
+                                <li>Doa</li>
+                                <li>Indonesia Raya</li>
+                                <li>Mars PGRI</li>
+                                <li>Laporan Ketua Panitia (Singkat)</li>
+                                <li>Sambutan Ibu Bupati membuka acara</li>
+                            </ol>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="flex items-start space-x-4 schedule-item p-2 bg-gray-50 rounded-lg transition duration-200 hover:bg-gray-100">
+                    <div class="flex-shrink-0 w-24 text-center font-bold time-box text-emerald-600">
+                        14.30
+                        <div class="text-xs font-medium text-gray-500">s/d 14.45</div>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-gray-700 font-medium">Foto Bersama</p>
+                    </div>
+                </li>
+
+                <!-- Perubahan teks pada item ini: Plt. Kadisdikpora -> Kadisdikpora -->
+                <li class="flex items-start space-x-4 schedule-item p-2 bg-white rounded-lg border-b border-gray-100">
+                    <div class="flex-shrink-0 w-24 text-center font-bold time-box text-emerald-600">
+                        14.45
+                        <div class="text-xs font-medium text-gray-500">s/d 15.00</div>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-gray-700 font-medium">Arahan Kebijakan Kadisdikpora</p>
+                    </div>
+                </li>
+
+                <li class="flex items-start space-x-4 schedule-item p-2 bg-gray-50 rounded-lg transition duration-200 hover:bg-gray-100">
+                    <div class="flex-shrink-0 w-24 text-center font-bold time-box text-emerald-600">
+                        15.00
+                        <div class="text-xs font-medium text-gray-500">s/d 16.30</div>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-gray-700 font-medium">Materi Narasumber 2 Sesi 2</p>
+                    </div>
+                </li>
+
+                <li class="flex items-start space-x-4 schedule-item p-2 bg-white rounded-lg border-b border-gray-100">
+                    <div class="flex-shrink-0 w-24 text-center font-bold time-box text-emerald-600">
+                        16.30
+                        <div class="text-xs font-medium text-gray-500">s/d 17.00</div>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-gray-700 font-medium">RTL (Rencana Tindak Lanjut) / Faslok</p>
+                    </div>
+                </li>
+                
+                <li class="flex items-start space-x-4 schedule-item p-2 bg-red-50 rounded-lg border-2 border-red-200 highlight">
+                    <div class="flex-shrink-0 w-24 text-center font-bold time-box text-red-700">
+                        17.00
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-red-800 font-semibold">Pengaturan Peserta Keluar Aula</p>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="p-4 text-center text-xs text-gray-500 border-t mt-4">
+            <p>Diselenggarakan oleh PGRI Kabupaten Pandeglang Tahun 2025</p>
+            <p class="mt-1">Managed by Edi Brata</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
